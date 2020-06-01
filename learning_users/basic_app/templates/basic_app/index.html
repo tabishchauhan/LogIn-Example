@@ -1,0 +1,14 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+<div class="container">
+
+    <h1></h1>
+    {% if user.is_authenticated %}
+        <h2 style="color:white">Welcome {{ user.username }},You are Logged In.</h2>
+    {% else %}
+        <h2 style="color:white">Welcome to the site!</h2>
+    {% endif %}
+  </div>
+
+{% endblock %}

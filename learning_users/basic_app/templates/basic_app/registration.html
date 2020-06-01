@@ -1,0 +1,38 @@
+{% extends "basic_app/base.html" %}
+
+
+{% block body_block %}
+  <div class="container">
+
+      {% if registered %}
+        <h1 style="color:white">Thank you for registering!</h1>
+      {% else %}
+
+       <h1 style="margin-top:100px; margin-left:400px; color:#9eb7d0">Register Here</h1>
+       <h3 style="margin-left:400px;  color:#9eb7d0;">Just fill out the form.</h3>
+
+       <form enctype="multipart/form-data" method="POST"style="margin-left:400px;color:#afe6bd">
+         {% csrf_token %}
+         <label for="id_username">Username:</label></br>
+         <input class="input100" type="text" name="username" maxlength="150" required="" id="id_username"></br>
+         <label for="id_email">Email address:</label></br>
+          <input type="email" name="email" maxlength="254" id="id_email"></br>
+         <label for="id_password">Password:</label></br>
+         <input type="password" name="password" required="" id="id_password"></br>
+         <p></p>
+         <input type="submit" name="" value="Register" class="btn btn-dark">
+       </form>
+
+
+
+
+
+
+
+      {% endif %}
+
+    </div>
+
+
+
+{% endblock %}

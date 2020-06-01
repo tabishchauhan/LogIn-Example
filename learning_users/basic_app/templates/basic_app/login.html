@@ -1,0 +1,21 @@
+{% extends 'basic_app/base.html' %}
+{% block body_block %}
+  <div class="container">
+      <h1 style="margin-top:100px; margin-left:400px; color:#f95b5b;">Please Login</h1>
+
+        <form method="post" action="{% url 'basic_app:user_login' %}" style="margin-left:400px; color:#afe6bd;">
+          {% csrf_token %}
+
+          <label for="username">Username:</label></br>
+          <input type="text" name="username" placeholder="Username" required></br>
+
+          <label for="password">Password:</label></br>
+          <input type="password" name="password" required></br>
+          <p></p>
+          <input type="submit" name="" value="Login" class="btn btn-dark"></br>
+          <p></p>
+          <a href="{% url 'basic_app:register' %}" class="btn btn-primary">Create New Account</a>
+        </form>
+
+  </div>
+{% endblock %}
